@@ -22,8 +22,12 @@ class SweetPotato():
         elif self.cooktime >= 8:
             self.cook_static = '烤糊了'
 
+    def add_condiments(self, condiment):
+        # 用户意愿的调料追加到调料列表
+        self.condiments.append(condiment)
+
     def __str__(self):
-        return f'这个地瓜烤了{self.cooktime}分钟，状态是{self.cook_static}'
+        return f'这个地瓜烤了{self.cooktime}分钟，状态是{self.cook_static}，调料有{self.condiments}'
 
 # 2. 创建对象并调用对应的实例方法
 digua1 = SweetPotato()
@@ -31,7 +35,9 @@ digua1 = SweetPotato()
 print(digua1)
 
 digua1.cook(2)
+digua1.add_condiments('辣椒面')
 print(digua1)
 
 digua1.cook(2)
+digua1.add_condiments('酱油')
 print(digua1)
